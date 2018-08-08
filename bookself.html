@@ -1,0 +1,192 @@
+﻿<!DOCTYPE html>
+<html data-dpr="1" style="font-size: 75px; margin: 0px auto; max-width: 750px;"><head>
+  <title>书架</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="format-detection" content="email=no">
+  <script>
+    var $CONFIG = {
+      __page: 'page.index', // 当前页面模块名称
+      version: '1.1.27565689956789',
+      staticRoot: '/',
+      scriptRoot: 'https://cdn.ayd6.cn/front/dm/js',
+    }
+  </script> 
+
+  <script src="Scripts/common.js"></script>
+  <script src="Scripts/swiper.js"></script>
+  <link rel="stylesheet" href="Css/swiper.css">
+  <link rel="stylesheet" href="Css/base.min.css">
+<script>
+    $CONFIG.__page= 'page.shujia';// 当前页面模块名称
+  </script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="https://cdn.ayd6.cn/front/dm/js/project/support/config.js?t=27565689956789" src="https://cdn.ayd6.cn/front/dm/js/project/support/config.js?t=27565689956789"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="page.shujia" src="https://cdn.ayd6.cn/front/dm/js/project/support/shujia.js?v=1.1.27565689956789"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="f-ui" src="https://cdn.ayd6.cn/front/dm/js/ui/index.js?v=1.1.27565689956789"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="f-lib" src="https://cdn.ayd6.cn/front/dm/js/library/index.js?v=1.1.27565689956789"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="storage" src="https://cdn.ayd6.cn/front/dm/js/library/storage/storage.js?v=1.1.27565689956789"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="jquery" src="https://cdn.ayd6.cn/front/dm/js/library/jquery/jquery.js?v=1.1.27565689956789"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="library/doT/doT" src="https://cdn.ayd6.cn/front/dm/js/library/doT/doT.js?v=1.1.27565689956789"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="library/require-css/css" src="https://cdn.ayd6.cn/front/dm/js/library/require-css/css.js?v=1.1.27565689956789"></script><link type="text/css" rel="stylesheet" href="https://cdn.ayd6.cn/front/dm/js/library/swiper/swiper.css?v=1.1.27565689956789"><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="fastclick" src="https://cdn.ayd6.cn/front/dm/js/library/fastclick.js?v=1.1.27565689956789"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="jquery.lazyload" src="https://cdn.ayd6.cn/front/dm/js/library/lazyload/jquery.lazyload.js?v=1.1.27565689956789"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="swiper" src="https://cdn.ayd6.cn/front/dm/js/library/swiper/swiper.js?v=1.1.27565689956789"></script></head>
+
+<body>
+  <style>
+    .nodis {display: none!important;}
+    .clearfix {*zoom:1;}
+    .clearfix:after {content: ".";display: block;height: 0;clear: both;visibility: hidden;}
+    .text-overflow {overflow: hidden;white-space: nowrap;text-overflow: ellipsis;-ms-text-overflow: ellipsis;-o-text-overflow: ellipsis;-moz-binding: url(ellipsis.xml#ellipsis)}
+    .fdialogBox{position: fixed;left: 50%;transform: translateX(-50%);max-width:750px;top: 0;width: 100%;height: 100%;z-index: 20;background: rgba(0,0,0,.8) url('https://cdn.ayd6.cn/front/dm/images/fdialogBox_bg.png?x111') no-repeat center;background-size: 100% auto;}
+    .fdialogBox .conBox{position: absolute;width: 81.4%;top: 50%;left: 9.3%;margin-top: -6.4rem;height: 12.8rem;}
+    .flist{padding-top: 4.53rem;}
+    .flist .item{padding:0 0.373rem;margin-top: 0.213rem;}
+    .flist .item .bookimg{width: 1.52rem;height: 2.07rem;border: 1px solid #d2d2d2;float: left;}
+    .flist .item .bookCon{margin-left: 1.83rem;font-size: 0.427rem;color: #333;line-height: 0.693rem;padding-top: 0.3755rem;}
+    .flist .item .bookdetail{font-size: 0.37rem;color: #666;line-height: 0.626rem;}
+  </style>
+  <header class="common_header2">
+    <div class="clearfix">
+      <a href="javascript:history.go(-1)" class="back_btn fl">返回</a>
+      <div class="meunBox clearfix">
+        <a href="bookself.html" class="active">历史</a>
+        <a href="bookself2.html">收藏</a>
+        
+      </div>
+      <div class="fr btns">
+       
+                
+                <a href="index.html" class="home_btn fl">首页</a> 
+      </div>
+    </div>
+  </header>
+
+  <section class="content_box shujia">
+    <input type="hidden" id="isPay" value="1">
+    <input type="hidden" id="isbegin" value="3">
+    
+<div class="dialog-text isbeginbox" style="display: none"><p></p></div>
+    <div class="common_title hasicon text-overflow titlebg11">
+      <span class="titleSpan">大王藏书阁有<i class="i">2</i>本漫画呢</span>
+       
+      <span class="manager_btn more1 fr noclass" data-url="/user/removebook">管理</span>
+                 </div>
+    <input type="hidden" name="book_type" id="book_type" value="1">
+        <!-- 没有漫画或小说时 -->
+     
+        <div class="pl30 pr30">
+      <!-- 有漫画时 -->
+      <div class="bookBox1 list2 type1 clearfix ">
+                <div class="item pb30 gengxin " data-url="/bookchapter?book_id=29846971&amp;chapter_id=249693">
+        <a href="book_id=9874.html">
+          <div class="tempitem">
+            <div class="imgBox clearfix"><i class="bgI"></i><img class="fl" src="https://res.ayd6.cn//dongman/2018-05-23/97cd64fc0a16d2107b6c8780a9a3263d.jpg"></div>
+            <div class="bookname text-overflow">神秘帝少甜宠妻</div>
+            <!-- <div class="newUpdate text-overflow">更新至<span class="color1">10话</span></div> -->
+            <div class="newUpdate text-overflow"><span class="color1">1/10</span></div>
+
+
+          </div>
+        </a>
+        </div>
+               <div class="item pb30  " data-url="/bookchapter?book_id=29785066&amp;chapter_id=61">
+        <a href="deta.html">
+          <div class="tempitem">
+            <div class="imgBox clearfix"><i class="bgI"></i><img class="fl" src="https://res.ayd6.cn/book/00/00/000/016/58301645c9bfd.jpg"></div>
+            <div class="bookname text-overflow">霸情恶少：调教小逃妻</div>
+            <!-- <div class="newUpdate text-overflow">更新至<span class="color1">167话</span></div> -->
+            <div class="newUpdate text-overflow"><span class="color1">1/167</span></div>
+
+
+          </div>
+        </a>
+        </div>
+             </div>
+    </div>
+                    
+    <!-- 小说 -->
+           
+    <div class="delTip"><span>删除</span></div>
+      <div class="fdialogBox nodis" id="fdialogBox">
+    <div class="conBox"> 
+      <div class="flist">
+                <div class="item">
+          <a href="/bookchapter/?book_id=6361&amp;sortorder=1">
+            <div class="tempIten clearfix">
+              <img class="bookimg" src="https://res.ayd6.cn///dongman/2017-11/d7d0c3bb99fc2c23f66c83dc4ebb9de8.jpg" alt="">
+              <div class="bookCon">
+                <div class="booktitle text-overflow">魔界女上司</div>
+                <div class="bookdetail text-overflow">自己的上司是个捉鬼的魔女</div>
+              </div>
+            </div>
+          </a>
+        </div>
+                <div class="item">
+          <a href="/bookchapter/?book_id=1971&amp;sortorder=1">
+            <div class="tempIten clearfix">
+              <img class="bookimg" src="https://res.ayd6.cn///dongman/2017-06/84af5e07531b191b9b9cf1cbb6b35a2c.jpg" alt="">
+              <div class="bookCon">
+                <div class="booktitle text-overflow">绝世武神</div>
+                <div class="bookdetail text-overflow">一次重生换来新的巅峰</div>
+              </div>
+            </div>
+          </a>
+        </div>
+                <div class="item">
+          <a href="/bookchapter/?book_id=6365&amp;sortorder=1">
+            <div class="tempIten clearfix">
+              <img class="bookimg" src="https://res.ayd6.cn///dongman/2017-11/156907a9c10d61f7c44edf077eb44b5f.jpg" alt="">
+              <div class="bookCon">
+                <div class="booktitle text-overflow">柒夕双探</div>
+                <div class="bookdetail text-overflow">不管在哪个时代罪恶的只是人心</div>
+              </div>
+            </div>
+          </a>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+  </section>
+  <script>
+    window.onload=function(){
+      document.getElementById('fdialogBox').onclick = function(e){
+        // console.log(e);
+        if(e.currentTarget.getAttribute('id') == 'fdialogBox'){
+          e.currentTarget.setAttribute('class',e.currentTarget.getAttribute('class')+' nodis');
+        }
+        // return false;
+      };
+      var swiper = new Swiper('.bannerBox', {
+        paginationClickable: true,
+        autoplay: 2000
+      });
+
+    };
+  </script>
+  <footer class="common_footer mtline oh">
+    <div class="menuBox">
+      <div class="clearfix">
+        <a href="index.html">首页</a>  
+        <a href="option.html">分类</a>
+        <a href="chongzhi.html">充值</a>
+        <a href="bookself.html">书架</a>
+        <a href="user.html">我的</a>
+      </div>
+    </div>
+    <div class="baseInfoBox clearfix">
+
+
+
+      <div class="imgBox fr clearfix">
+              </div>
+      
+       <div class="baseInfo">
+                        <div>客服QQ：<span class="color1">2319747950</span></div>
+                        <div>工作时间：<span class="color1">周一至周五 8:00-21:00</span></div>
+                <div style="margin-top:3%;"><span class="color1" >未满18周岁的用户,请在家长陪同下观看</span></div>
+                <div class="erweima" style="margin-left:85%;margin-top:-18%;"><img src="Picture/erweima.png" /></div>
+
+      </div>
+    </div>
+     <div style="display: none">
+        <script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1261994925'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s22.cnzz.com/z_stat.php%3Fid%3D1261994925' type='text/javascript'%3E%3C/script%3E"));</script><span id="cnzz_stat_icon_1261994925"><a href="http://www.cnzz.com/stat/website.php?web_id=1261994925" target="_blank" title="站长统计">站长统计</a></span><script src=" http://s22.cnzz.com/z_stat.php?id=1261994925" type="text/javascript"></script><script src="http://c.cnzz.com/core.php?web_id=1261994925&amp;t=z" charset="utf-8" type="text/javascript"></script>        </div>
+  </footer>
+
+
+  <script type="text/javascript" src="https://cdn.ayd6.cn//front/v2/lib/jquery/jquery.min.js?t=27565689956789"></script>
+  <script data-main="https://cdn.ayd6.cn/front/dm/js/project/support/config.js?t=27565689956789" src="https://cdn.ayd6.cn/front/dm/js/require-2.2.0.js?t=27565689956789"></script>
+
+ 
+</body></html>

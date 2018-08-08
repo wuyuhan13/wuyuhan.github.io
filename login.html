@@ -1,0 +1,87 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+  <title>登录</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+  <meta name="format-detection" content="telephone=no">
+  <meta name="format-detection" content="email=no"/>
+  <script>
+    var $CONFIG = {
+      __page: 'page.index', // 当前页面模块名称
+      version: '1.1.45678945678456784561111789',
+      staticRoot: '/',
+      scriptRoot: 'https://cdn.ayd6.cn/front/dm/js',
+    }
+  </script> 
+
+  <script src="Scripts/common.js"></script>
+  <link rel="stylesheet" href="Css/swiper.css">
+  <link rel="stylesheet" href="Css/base.min.css">
+</head>
+<body>
+  <header class="common_header3">
+    <div class="title">登录</div>
+    <a href="javascript:history.go(-1)" class="fl back_btn notxt">返回</a>
+    <a href="/" class="fr mainColor">随便逛逛</a>
+  </header>
+
+  <section class="content_box login">
+  <form action="/login/index/do" method="post" id="add_form">
+    <div class="formBox">
+      <div class="inputBox clearfix"><input type="input" class="phone okok" placeholder="请输入手机号" name="phone" id="phone"><i></i><span class="close_btn"></span></div>
+      <div class="inputBox clearfix"><input type="password" class="lock okok" placeholder="请输入密码" name="password" id="lock"><i></i><span class="showpas2"></span></div>
+      <div class="clearfix">
+        <a href="/login/forgetpsd" class="lost_btn fr">忘记密码?</a>
+        <div class="errortip text-overflow"></div>
+      </div>
+      <input type="button" class="active_btn" value="登录" name="" id="add_btn">
+      <a href="/login/register" class="def_btn">注册</a>
+    </div>
+  </form>
+    <div class="otherloginBox">
+      <div class="title"><span>其他方式登录</span></div>
+      <div class="clearfix btns">
+        <a href="/login/qq" class="qq_btn">qq</a>
+        <!-- <a href="/login/weixin" class="weixin_btn">微信</a> -->
+        <a href="/login/sina" class="sina_btn">sina</a>
+      </div>
+    </div>
+  </section>
+  <script type="text/javascript" src="Scripts/jquery.min.js"></script>
+  <script data-main="https://cdn.ayd6.cn/front/dm/js/project/support/config.js?t=45678945678456784561111789" src="Scripts/require-2.2.0.js"></script>
+  <script type="text/javascript">
+  
+  $(function(){
+      
+    $('#add_btn').bind('click', function(){
+      
+        $.ajax({
+            type: "post",
+            dataType:"json",
+            url:  $('#add_form').attr('action'),
+            data: $('#add_form').serialize(),
+            success: function(msg) {
+                if(msg.result.status.code == 0){
+                    window.location.href = '/user';
+                }else{
+                    $('.errortip').html(msg['result']['status']['msg']);
+                }
+                return false;
+            },
+            error: function(msg) {
+                return false;
+                window.location.href='/';
+            }
+        });
+    });
+    $('.close_btn').bind('click',function(){
+      $('#phone').val('');
+    });
+    $('.okok').bind('focus',function(){
+        $('.errortip').html('');
+    });
+  })
+</script>
+</body>
+</html>

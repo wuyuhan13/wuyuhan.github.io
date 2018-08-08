@@ -1,0 +1,151 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<title>搜索</title>
+	<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+  <meta name="format-detection" content="telephone=no">
+  <meta name="format-detection" content="email=no"/>
+	<script>
+    var $CONFIG = {
+      __page: 'page.index', // 当前页面模块名称
+      version: '1.1.27565689956789',
+      staticRoot: '/',
+      scriptRoot: 'https://cdn.ayd6.cn/front/dm/js',
+    }
+  </script> 
+
+  <script src="Scripts/common.js"></script>
+  <script src="Scripts/swiper.js"></script>
+  <link rel="stylesheet" href="Css/swiper.css">
+  <link rel="stylesheet" href="Css/base.min.css">
+</head>
+<body class="bgf">
+  <header class="common_header1 clearfix sousuo">
+  <form action="/search/index_lists" method="post" onsubmit="return beforeSubmit();">
+    <div class="headertitle pl116 pr130 clearfix"><input type="text" class="search_txt" placeholder="快来喵喵喜欢的作品吧" name="book_title" value=""><a class="clear_btn"></a></div>
+    
+    <a href="javascript:history.go(-1)" class="a_btn return_btn fl">返回</a>
+    <a onclick="$('form').submit();" class="fs32 fr a_btn txt-ind0">搜索</a>
+    </form>
+  </header>
+
+  <section class="content_box xiangqing sousuo">
+   <!--  <div class="muluBox pl30 pr30 pb0">
+      <ul class="muluList">
+        <li class="linH88 h88"><a href="#" class="text-overflow"><span class="mainColor1">女</span>王的骑士</a></li>
+        <li class="linH88 h88"><a href="#" class="text-overflow"><span class="mainColor1">女</span>王的骑士</a></li>
+        <li class="linH88 h88"><a href="#" class="text-overflow"><span class="mainColor1">女</span>王的骑士</a></li>
+      </ul>
+    </div>
+ -->
+    <div class="searchTab clearfix">
+      <a href="/search" class="active">漫画</a>
+      <a href="/bookx/search">小说</a>
+    </div>
+        <div class="nodata">大王饶命啊，小的没有找到<span class="mainColor1">""</span></div>
+        <!-- <div class="h20 bgf7"></div> -->
+
+    <div class="pl20">
+      <div class="common_title hasicon text-overflow titlebg12"><span class="titleSpan color6">大家都在搜这些</span><a href="javascript:;" class="more1 changeData" data-pages='3' data-url='/search/dajia' data-con=".searchHisBox" data-first='true'><span>更多</span></a></div>
+    </div>
+    <div class="searchHisBox clearfix pl20">
+   
+     
+    </div>
+    <div class="h20 bgf7"></div>
+
+    <!-- <div class="pl20 pr20">
+      <div class="common_title hasicon text-overflow titlebg11"><span class="titleSpan color6">大王以前搜过</span></div>
+      <div class="searchHisList clearfix">
+        <div class="item clearfix">
+          <a href="#">挽香</a>
+          <i class="close_btn"></i>
+        </div>
+        <div class="item clearfix">
+          <a href="#">挽香</a>
+          <i class="close_btn"></i>
+        </div>
+        <div class="item clearfix">
+          <a href="#">挽香</a>
+          <i class="close_btn"></i>
+        </div>
+        <div class="item clearfix">
+          <a href="#">挽香</a>
+          <i class="close_btn"></i>
+        </div>
+      </div>
+    </div> -->
+    
+    <div class="pl20 pr20">
+      <div class="common_title hasicon text-overflow titlebg9"><span class="titleSpan">超级热门的漫画</span></div>
+      <div class="bookBox1 list2 pb20 clearfix">
+                           <div class="item">
+        <a href="/book?book_id=9704">
+          <div class="tempitem">
+            <div class="imgBox clearfix"><img class="fl" src="Picture/44caa872ea5789fd319a9efe709725ee.jpg"></div>
+            <div class="bookname text-overflow">双面名媛</div>
+          </div>
+        </a>
+        </div>
+                          <div class="item">
+        <a href="/book?book_id=9694">
+          <div class="tempitem">
+            <div class="imgBox clearfix"><img class="fl" src="Picture/43da680e67eca4adbb816af40ac7e1ef.jpg"></div>
+            <div class="bookname text-overflow">首席狠狠爱</div>
+          </div>
+        </a>
+        </div>
+                          <div class="item">
+        <a href="/book?book_id=9693">
+          <div class="tempitem">
+            <div class="imgBox clearfix"><img class="fl" src="Picture/80b1ef4f5015cec30932344ec66d3d41.jpg"></div>
+            <div class="bookname text-overflow">闻香识妻</div>
+          </div>
+        </a>
+        </div>
+                                                                                  </div>
+  </section>
+  <footer class="common_footer mtline oh">
+    <div class="menuBox">
+      <div class="clearfix">
+        <a href="index.html">首页</a>  
+        <a href="option.html">分类</a>
+        <a href="chongzhi.html">充值</a>
+        <a href="bookself.html">书架</a>
+        <a href="user.html">我的</a>
+      </div>
+    </div>
+    <div class="baseInfoBox clearfix">
+
+
+
+      <div class="imgBox fr clearfix">
+              </div>
+      
+       <div class="baseInfo">
+                        <div>客服QQ：<span class="color1">2319747950</span></div>
+                        <div>工作时间：<span class="color1">周一至周五 8:00-21:00</span></div>
+                <div style="margin-top:3%;"><span class="color1" >未满18周岁的用户,请在家长陪同下观看</span></div>
+                <div class="erweima" style="margin-left:85%;margin-top:-18%;"><img src="Picture/erweima.png" /></div>
+
+      </div>
+    </div>
+     <div style="display: none">
+        <script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1261994925'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s22.cnzz.com/z_stat.php%3Fid%3D1261994925' type='text/javascript'%3E%3C/script%3E"));</script>        </div>
+  </footer>
+
+
+  <script type="text/javascript" src="Scripts/jquery.min.js"></script>
+  <script data-main="https://cdn.ayd6.cn/front/dm/js/project/support/config.js?t=27565689956789" src="Scripts/require-2.2.0.js"></script>
+</body>
+ </html>
+<script type='text/javascript'>
+     function beforeSubmit(){
+        var v = $(".search_txt").val();
+        if(v.length >0){
+            return true;
+        }
+        return false;
+    }
+</script>
