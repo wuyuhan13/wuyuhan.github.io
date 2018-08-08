@@ -1,0 +1,128 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+  <meta name="format-detection" content="telephone=no">
+  <meta name="format-detection" content="email=no"/>
+  <script>
+    var $CONFIG = {
+      __page: 'page.index', // 当前页面模块名称
+      version: '1.1.45678945678456784561111789',
+      staticRoot: '/',
+      scriptRoot: 'https://cdn.ayd6.cn/front/dm/js',
+    }
+  </script> 
+
+  <script src="Scripts/common.js"></script>
+  <link rel="stylesheet" href="Css/swiper.css">
+  <link rel="stylesheet" href="Css/base.min.css">
+</head>
+<body>
+  <header class="common_header3">
+    <div class="title">注册</div>
+    <a href="javascript:history.go(-1)" class="fl back_btn notxt">返回</a>
+    <a href="/" class="fr mainColor">随便逛逛</a>
+  </header>
+
+  <section class="content_box login">
+  <form action="/login/register/do" method="post" id="add_form">
+    <div class="formBox">
+      <div class="inputBox clearfix"><input type="input" class="phone okok" placeholder="请输入手机号" name="phone" id="phone"><i></i><span class="close_btn"></span></div>
+      <div class="inputBox clearfix"><input type="input" class="yzm okok" placeholder="请输入短信验证码" name="validation_code"><a href="javascript:void(0)" id="yzm" class="getyzm" data-time="0">获取验证码</a></div>
+      <div class="inputBox clearfix"><input type="password" class="lock okok" placeholder="请输入密码" name="password"></div>
+      <div class="clearfix">
+        <div class="errortip text-overflow"></div>
+      </div>
+      <input type="button" class="active_btn" value="注册" name="" id="add_btn">
+      <a href="/login" class="def_btn">登录</a>
+    </div>
+  </form>  
+  </section>
+  <script type="text/javascript" src="Scripts/jquery.min.js"></script>
+  <script data-main="https://cdn.ayd6.cn/front/dm/js/project/support/config.js?t=45678945678456784561111789" src="Scripts/require-2.2.0.js"></script>
+  <script type="text/javascript">
+  $(function(){
+    $('#add_btn').bind('click', function(){
+        $.ajax({
+          type: "post",
+          dataType:"json",
+          url:  $('#add_form').attr('action'),
+          data: $('#add_form').serialize(),
+          success: function(msg) {
+              if(msg.result.status.code == 0){
+                  // alert('注册成功!!!');
+                window.location.href= '/login';
+              }else{
+                   $('.errortip').html(msg['result']['status']['msg']);
+              }
+              return false;
+          },
+          error: function(msg) {
+              return false;
+              window.location.href='/';
+          }
+        });
+    });
+    $("#yzm").bind('click',function(){
+      var _this = this;
+      var phone = $("#phone").val();
+      if(phone.length<11){
+        $('.errortip').html('手机格式不正确');return;
+      }
+      $('.errortip').html('');
+      if($(_this).hasClass('click')){
+        return false;
+      }
+      $(_this).addClass('click');
+      $.ajax({
+          type: "get",
+          dataType:"json",
+          url:  '/login/yzm?phone='+phone,
+          success: function(msg) {
+            if(msg.result.status.code == 0){
+              // alert('验证码已发送,请注意查收！');
+              $(_this).data('time',60);
+              resultTime();
+            }else{
+              $('.errortip').html(msg['result']['status']['msg']);
+            }
+            return ;
+          },
+          error: function(msg) {
+            $('.errortip').html(msg['result']['status']['msg']);
+            return;
+          },
+          complete: function(){
+            $(_this).removeClass('click');
+          }
+        });
+    }) 
+    function resultTime(){
+      if((parseInt($('#yzm').data('time'))||0)>0){
+        var val = (parseInt($('#yzm').data('time'))||0)-1;
+        $("#yzm").html(val+'s').data('time',val).addClass('disab').addClass('click');
+        var tempT = setInterval(function(){
+          var val = (parseInt($('#yzm').data('time'))||0)-1;
+          $("#yzm").html(val+'s').data('time',val).addClass('click');
+          if((parseInt($('#yzm').data('time'))||0)<=0){
+            $('#yzm').removeClass('click').removeClass('disab').html('获取验证码');
+            clearInterval(tempT);
+          }
+        },1000);
+      }else{
+        $("#yzm").removeClass('disab').html('获取验证码');
+      }
+    }
+    resultTime();
+    $('.close_btn').bind('click',function(){
+      $('#phone').val('');
+    })
+     $('.okok').bind('focus',function(){
+        $('.errortip').html('');
+    });
+  })
+</script>
+</body>
+</html>
