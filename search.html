@@ -92,13 +92,15 @@
     <div class="h20 bgf7"></div>
     <div class="pl20">
       <div class="common_title hasicon text-overflow titlebg12"><span class="titleSpan color6">搜索记录</span>
-      <a href="javascript:;" class="more1 delData" data-pages='3' data-url='/search/dajia' data-con=".searchHisBox" data-first='true'><span>更多</span></a></div>
+      <a href="javascript:void(0);" class="more1" onclick="deleteRow()" ><span>删除</span></a></div>
     </div>
-    <div class="searchHisBox clearfix pl20">
+
+    <div class="searchHisBox clearfix pl20" id="searchis">
    
       <a href="/search/index_lists?book_title=穿越" class="sc1 rand_c4">穿越</a>
      
       <a href="/search/index_lists?book_title=妙手" class="sc1 rand_c3">妙手</a>
+
     </div>
     <div class="h20 bgf7"></div>
 
@@ -154,6 +156,14 @@
                                                                                     </div>
     </div>
   </section>
+  <script type="text/javascript">
+   function deleteRow(){
+        //使用 is() 方法, 来判断某个给定的 jQuery 对象是否符合指定
+        //的选择器. 
+         $("#searchis").remove();
+
+      }
+</script>
   <footer class="common_footer mtline oh">
     <div class="menuBox">
       <div class="clearfix">
